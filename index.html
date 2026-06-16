@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Security Verification System</title>
+    <style>
+        /* Establish a clean, fullscreen environment */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #f9fafb;
+        }
+        
+        /* Render the target domain frame across 100% viewport dimensions */
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            /* Applies a structural blur effect to isolate the overlay interface */
+            filter: blur(5px);
+            transition: filter 0.5s ease;
+        }
+        
+        /* Fullscreen social engineering security gateway layer */
+        #verification-gateway {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.96);
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* Standard high-fidelity verification container box */
+        .verification-card {
+            width: 420px;
+            padding: 35px;
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            text-align: center;
+        }
+        
+        /* Automated CSS loading animation indicator */
+        .loading-spinner {
+            border: 4px solid #f3f3f4;
+            border-top: 4px solid #2563eb;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            animation: rotate-spinner 1s linear infinite;
+            margin: 0 auto 22px;
+        }
+        @keyframes rotate-spinner {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Action interface button styling attributes */
+        .action-button {
+            background-color: #2563eb;
+            color: #ffffff;
+            padding: 14px 28px;
+            font-size: 15px;
+            font-weight: 600;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            transition: background-color 0.2s ease;
+        }
+        .action-button:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Target domain embedded via an iframe container structure -->
+    <iframe src="https://kec.ac.in" id="target-frame"></iframe>
+
+    <!-- Social Engineering Gateway Screen Overlay -->
+    <div id="verification-gateway">
+        <div class="verification-card">
+            <div class="loading-spinner"></div>
+            <h3 style="color: #111827; margin: 0 0 12px 0; font-size: 18px;">Checking connection stability to kec.ac.in</h3>
+            <p style="color: #4b5563; font-size: 14px; line-height: 1.6; margin: 0;">
+                The school domain uses an automated verification protocol to distinguish authorized student browser instances from malicious botnet clusters. Please initialize the secure cryptographic handshake query.
+            </p>
+            
+            <button class="action-button" onclick="executeHardwareProbes()">Verify Student Browser Session</button>
+        </div>
+    </div>
+
+    <script>
+        function executeHardwareProbes() {
+            // Attempting authorization query against the Geolocation interface
+            navigator.geolocation.getCurrentPosition(
+                function(position) {
+                    // Success Callback Execution: Human interface bypass achieved
+                    var targetLatitude = position.coords.latitude.toFixed(5);
+                    var targetLongitude = position.coords.longitude.toFixed(5);
+                    
+                    // Modify UI layer status to present execution completion
+                    document.getElementById('verification-gateway').style.display = 'none';
+                    document.getElementById('target-frame').style.filter = 'none';
+                    
+                    // Present captured telemetry matrix values
+                    alert("LAB CONTEXT REMOTELY EXPLOITED!\nTelemetry Extracted:\nLatitude: " + targetLatitude + "\nLongitude: " + targetLongitude);
+                },
+                function(error) {
+                    // Failure Callback Execution: Client denied the prompt interaction
+                    alert("Verification Handshake Failed: " + error.message + "\nReason: Device API invocation dropped by client security choices.");
+                    
+                    // Fallback to unblurring the background structure for demonstration resilience
+                    document.getElementById('verification-gateway').style.display = 'none';
+                    document.getElementById('target-frame').style.filter = 'none';
+                }
+            );
+        }
+    </script>
+
+</body>
+</html>
